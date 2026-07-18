@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luca — Game Developer</title>
+<meta name="description" content="Luca — desarrollador de videojuegos. Proyectos, código y contacto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b0b0d;
+    --paper:#efeae1;
+    --red:#d90429;
+    --red-deep:#8a0018;
+    --yellow:#ffcc00;
+    --line: rgba(239,234,225,0.14);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    overflow-x:hidden;
+    min-height:100vh;
+  }
+  ::selection{background:var(--red);color:var(--ink)}
+
+  .halftone{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image: radial-gradient(circle, rgba(217,4,41,0.5) 1.4px, transparent 1.6px);
+    background-size:14px 14px;
+    -webkit-mask-image: radial-gradient(circle at 8% 6%, black 0%, black 18%, transparent 46%);
+    mask-image: radial-gradient(circle at 8% 6%, black 0%, black 18%, transparent 46%);
+    opacity:0.9;
+  }
+  .halftone.br{
+    -webkit-mask-image: radial-gradient(circle at 96% 100%, black 0%, black 10%, transparent 34%);
+    mask-image: radial-gradient(circle at 96% 100%, black 0%, black 10%, transparent 34%);
+  }
+
+  .wrap{position:relative; z-index:1; max-width:640px; margin:0 auto; padding:64px 22px 40px}
+
+  .ribbon{
+    position:fixed; top:14%; left:-60%; width:220%; height:64px;
+    background:var(--red);
+    transform:rotate(-7deg) translateX(-10%);
+    z-index:2; pointer-events:none;
+    box-shadow:0 0 0 6px var(--ink), 0 18px 40px rgba(0,0,0,0.5);
+    animation: sweep 900ms cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  .ribbon span{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    font-family:'JetBrains Mono',monospace; font-weight:600; letter-spacing:.35em;
+    font-size:12px; color:var(--ink); white-space:nowrap;
+  }
+  @keyframes sweep{
+    0%{ left:-60%; opacity:1 }
+    70%{ left:-8%; opacity:1 }
+    100%{ left:-140%; opacity:0 }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ribbon{ animation:none; opacity:0 }
+  }
+
+  header{ opacity:0; animation:rise 500ms ease-out 850ms forwards }
+  @media (prefers-reduced-motion: reduce){ header{ opacity:1; animation:none } }
+  @keyframes rise{ from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:translateY(0)} }
+
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.3em;
+    color:var(--yellow); margin:0 0 10px;
+  }
+  .eyebrow::before{ content:"["; color:var(--red) }
+  .eyebrow::after{ content:"]"; color:var(--red) }
+
+  h1{
+    font-family:'Anton',sans-serif; font-weight:400;
+    font-size:clamp(52px,14vw,88px); line-height:0.86; margin:0;
+    letter-spacing:.01em;
+    text-transform:uppercase;
+    transform:skewX(-6deg);
+  }
+  h1 .a{ color:var(--paper) }
+  h1 .b{
+    color:var(--ink); background:var(--red);
+    padding:0 10px; display:inline-block; margin-top:6px;
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+  }
+
+  .role{ margin:18px 0 0; font-size:15px; color:var(--paper); opacity:.75; max-width:46ch; }
+
+  .cut{
+    height:26px; margin:34px 0 30px;
+    background:repeating-linear-gradient(-8deg, var(--red) 0 34px, var(--ink) 34px 40px);
+    clip-path: polygon(0 30%, 100% 0, 100% 70%, 0% 100%);
+  }
+
+  .menu-label{
+    font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.3em;
+    color:var(--paper); opacity:.5; margin:0 0 14px;
+  }
+
+  .menu{ list-style:none; margin:0 0 42px; padding:0; display:flex; flex-direction:column; gap:12px }
+
+  .menu li{ opacity:0; animation:rise 420ms ease-out forwards }
+  .menu li:nth-child(1){animation-delay:950ms}
+  .menu li:nth-child(2){animation-delay:1020ms}
+  .menu li:nth-child(3){animation-delay:1090ms}
+  .menu li:nth-child(4){animation-delay:1160ms}
+  .menu li:nth-child(5){animation-delay:1230ms}
+  @media (prefers-reduced-motion: reduce){ .menu li{ opacity:1; animation:none } }
+
+  .link{
+    position:relative; display:flex; align-items:center; gap:16px;
+    padding:16px 18px; text-decoration:none; color:var(--paper);
+    background:rgba(239,234,225,0.04);
+    border:1px solid var(--line);
+    clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+    transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+    overflow:hidden;
+  }
+  .link:focus-visible{ outline:2px solid var(--yellow); outline-offset:3px }
+  .link::before{
+    content:""; position:absolute; inset:0; background:var(--red);
+    transform:translateX(-101%); transition:transform 220ms ease; z-index:0;
+  }
+  .link:hover, .link:focus-visible{ transform:translate(3px,-2px) }
+  .link:hover::before, .link:focus-visible::before{ transform:translateX(0) }
+  .link:hover .tag, .link:hover .title, .link:hover .sub,
+  .link:focus-visible .tag, .link:focus-visible .title, .link:focus-visible .sub{ color:var(--ink) }
+
+  .tag{
+    position:relative; z-index:1;
+    font-family:'JetBrains Mono',monospace; font-weight:600; font-size:13px;
+    color:var(--red); min-width:34px;
+  }
+  .body{ position:relative; z-index:1; display:flex; flex-direction:column; gap:2px }
+  .title{ font-weight:700; font-size:16px; color:var(--paper) }
+  .sub{ font-size:12.5px; color:var(--paper); opacity:.6 }
+  .arrow{ position:relative; z-index:1; margin-left:auto; font-family:'JetBrains Mono',monospace; color:var(--paper); opacity:.5 }
+  .link:hover .arrow, .link:focus-visible .arrow{ opacity:1; color:var(--ink) }
+
+  footer{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;
+    padding-top:18px; border-top:1px solid var(--line);
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--paper); opacity:.45;
+  }
+</style>
+</head>
+<body>
+  <div class="halftone"></div>
+  <div class="halftone br"></div>
+  <div class="ribbon"><span>TAKE YOUR TIME — TAKE THE FIGHT</span></div>
+
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">GAME DEV / PROGRAMADOR / DISEÑADOR</p>
+      <h1><span class="a">SOY</span><br><span class="b">LUCA</span></h1>
+      <p class="role">Construyo experiencias interactivas con Unity, Python y Scratch — desde el prototipo hasta la publicación.</p>
+    </header>
+
+    <div class="cut" aria-hidden="true"></div>
+
+    <p class="menu-label">MENÚ</p>
+    <ul class="menu">
+      <li>
+        <a class="link" href="https://github.com/heyitsluca" target="_blank" rel="noopener">
+          <span class="tag">01</span>
+          <span class="body">
+            <span class="title">GitHub</span>
+            <span class="sub">Todos los repositorios y el código fuente</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://github.com/heyitsluca/Proyecto-Scratch" target="_blank" rel="noopener">
+          <span class="tag">02</span>
+          <span class="body">
+            <span class="title">Proyecto Scratch</span>
+            <span class="sub">Nivel 1 — primeros pasos en lógica de juego</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://github.com/heyitsluca/Proyecto-Python" target="_blank" rel="noopener">
+          <span class="tag">03</span>
+          <span class="body">
+            <span class="title">Proyecto Python</span>
+            <span class="sub">Nivel 2 — scripting y sistemas de juego</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://github.com/heyitsluca/Proyecto-Unity" target="_blank" rel="noopener">
+          <span class="tag">04</span>
+          <span class="body">
+            <span class="title">Proyecto Unity</span>
+            <span class="sub">Nivel 3 — demo jugable completa</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="mailto:9luca.gonzalez@gmail.com">
+          <span class="tag">05</span>
+          <span class="body">
+            <span class="title">Contacto</span>
+            <span class="sub">Colaboraciones, contrataciones o feedback</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+    </ul>
+
+    <footer>
+      <span>© <span id="year"></span> LUCA</span>
+      <span>HOSTED ON GITHUB PAGES</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
