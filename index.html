@@ -1,172 +1,306 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+:root{
+    --pink:#FF6BBF;
+    --boxbg:rgba(0,0,0,.45);
+    --borders:double var(--pink) 4px;
+}
+
+body{
+    background:url(https://i.pinimg.com/originals/b6/cd/09/b6cd095b544fceabb377fa28a9b4eb53.jpg);
+    cursor:url(https://i.imgur.com/n1OKJev.png), default;
+}
+
+main{
+    background:none;
+}
+
 p{
-    color: white;
-    text-align: center;
-    font-family: 'pt mono';
+    color:white;
+    text-align:center;
+    font-family:'PT Mono', monospace;
 }
-h1,h2,h3,h4,h5 {
-    color: white;
-    text-align: center;
-    font-family: 'press start 2p';
-    font-size: 10px;
-}
-body {
-    background: url(https://i.pinimg.com/originals/b6/cd/09/b6cd095b544fceabb377fa28a9b4eb53.jpg);
-}
-main {
-    background: none;
-}
-.general-about {
-    border: double #FF6BBF 4px;
-    padding: 10px;
-    height: 217px;
-    background: rgba(0, 0, 0, 0.3);
-}
-.general-about .profile-pic img {
-     border: solid #FF6BBF 3px;
-}
-.contact .inner {
-    border: double #FF6BBF 4px;
-    background: (0,0,0,30);
-}
-:root {
-    --logo-blue: ;
-    --darker-blue: white;
-    --lighter-blue: ;
-    --even-lighter-blue: ;
-    --lightest-blue: ;
-    --dark-orange: white;
-    --light-orange: ;
-    --even-lighter-orange: ;
-    --green: ;
-}
-.mood {
-    margin-top: 10px;
-    margin-bottom: 3px;
-    border: double #FF6BBF 4px;
-    padding-left: 10px;
-    padding-top: 5px;
-    background: (0,0,0,30);
-}
-.profile .left .table-section .inner {
-    border: double #FF6BBF 4px;
-    padding-left: 7px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    background: (0,0,0,30);
-}
-.blog-preview {
-    margin-top: 32px;
-}
-.blurbs .inner {
-    border: double #FF6BBF 4px;
-    padding-left: 10px;
-    padding-top: 10px;
-    background: (0,0,0,30);
-}
-.friends .inner {
-    border: double #FF6BBF 4px;
-    padding-left: 10px;
-    padding-top: 10px;
-    margin-bottom: 20px;
-    background: (0,0,0,30);
-}
-table.comments-table{
-    display: block;
-    height: 250px!important;
-    overflow-y: scroll;
-}
-.url-info {
-    border: var(--borders)!important;
-    background: (0,0,0,30);
-}
-:root {
-    --borders: double #FF6BBF 4px;
-    background: (0,0,0,30);
-}
-nav .links {
-    border: var(--borders);
-    text-align: center;
-    font-size: 11px;
-    font-family: 'pt mono';
-    background: (0,0,0,30);
-}
-.top {
-    border: var(--borders);
-    margin-bottom: 10px;
-    font-family: 'pt mono';
-    background: (0,0,0,30%);
-}
-.profile h1 {
-    text-align: center;
 
+h1,h2,h3,h4,h5{
+    color:white;
+    text-align:center;
+    font-family:'Press Start 2P', cursive;
+    font-size:10px;
+    line-height:1.6;
 }
+
+a{
+    color:white;
+    text-decoration:none;
+}
+
+.general-about{
+    border:var(--borders);
+    padding:10px;
+    background:var(--boxbg);
+}
+
+.general-about .profile-pic img{
+    border:solid var(--pink) 3px;
+}
+
+.contact .inner,
+.mood,
+.profile .left .table-section .inner,
+.blurbs .inner,
+.friends .inner,
+.url-info,
+.top,
 footer{
-    border: var(--borders);
-    font-size: 15px;
-    background: none;
+    border:var(--borders);
+    background:var(--boxbg);
 }
-.friends .person img {
-    border: solid #FF6BBF;
+
+.profile .left .table-section .inner,
+.blurbs .inner,
+.friends .inner{
+    padding:10px;
 }
-.profile .friends .person p {
-    color: white;
-    font-weight: normal;
+
+nav .links{
+    border:var(--borders);
+    text-align:center;
+    font-size:11px;
+    font-family:'PT Mono';
+    background:var(--boxbg);
 }
-.comments-table td img {
-    border: solid #FF6BBF;
+
+.friends .person img,
+.comments-table td img{
+    border:solid var(--pink);
 }
-.comments-table td p {
-    font-weight: normal;
+
+.count{
+    color:var(--pink);
 }
-.count {
-    color: #FF6BBF;
+
+button,input,optgroup,select,textarea{
+    font-family:'PT Mono';
+    font-size:10px;
+    background:black;
+    border:double var(--pink) 3px;
+    color:white;
 }
-button, input, optgroup, select, textarea {
-    font-family: 'pt mono';
-    font-size: 10px;
-    line-height: 1.15;
-    margin: 0;
-    background: #000000;
-    border: #FF6BBF double 3px;
-    color: white;
+
+/* LINK IN BIO */
+
+.bio-box,
+.links-box,
+.project-box,
+.music-box,
+.favorites-box{
+    border:var(--borders);
+    background:var(--boxbg);
+    padding:12px;
+    margin-top:15px;
+}
+
+.pixel-btn{
+    display:block;
+    width:85%;
+    margin:8px auto;
+    padding:8px;
+    border:double var(--pink) 3px;
+    background:black;
+    text-align:center;
+    transition:.2s;
+}
+
+.pixel-btn:hover{
+    background:var(--pink);
+    color:black;
+}
+
+/* CONTACT ICONS */
+
+.contact .inner a img{
+    font-size:0;
+}
+
+.contact .inner a:before{
+    font-size:18px;
+}
+
+.contact .inner .f-row:nth-child(1) .f-col:nth-child(1) a:before{content:"☆";}
+.contact .inner .f-row:nth-child(1) .f-col:nth-child(2) a:before{content:"☆";}
+.contact .inner .f-row:nth-child(2) .f-col:nth-child(1) a:before{content:"★";}
+.contact .inner .f-row:nth-child(2) .f-col:nth-child(2) a:before{content:"★";}
+.contact .inner .f-row:nth-child(3) .f-col:nth-child(1) a:before{content:"☆";}
+.contact .inner .f-row:nth-child(3) .f-col:nth-child(2) a:before{content:"☆";}
+.contact .inner .f-row:nth-child(4) .f-col:nth-child(1) a:before{content:"★";}
+.contact .inner .f-row:nth-child(4) .f-col:nth-child(2) a:before{content:"★";}
+
+/* CRT EFFECT */
+
+html:after{
+    animation:grain 8s steps(10) infinite;
+    background-image:url(https://64.media.tumblr.com/849c4259435e5ff9789dd42e23fbf003/tumblr_p422nhq6vi1qzm8dwo1_640.gifv);
+    content:"";
+    height:300%;
+    left:-50%;
+    opacity:.4;
+    position:fixed;
+    top:-110%;
+    width:300%;
+    pointer-events:none;
+}
+
+@keyframes grain{
+    70%{
+        transform:translate(0%,15%);
+    }
+}
+
+/* FLYING THING */
+
+@keyframes flying-santa{
+    from{
+        left:-400px;
+    }
+    to{
+        left:calc(100% + 20px);
+    }
+}
+
+#santa{
+    position:fixed;
+    left:-400px;
+    top:500px;
+    width:350px;
+    animation:flying-santa 8s infinite linear;
+    pointer-events:none;
 }
 </style>
-<style>
 
-body { cursor: url(https://i.imgur.com/n1OKJev.png), default; }
+<!-- GATO -->
 
-</style>
+<div style="position:fixed;left:37px;top:9px;z-index:200;">
+<a href="https://alturl.com/p749b">
+<img src="https://autism.crd.co/assets/images/gallery03/45050ba7_original.gif?v=69d6a439">
+</a>
+</div>
 
-<div style="float:  ; max-width: 200px; height: auto; position: fixed; left: 37px; top: 9px; z-index: 200;"><a href="https://alturl.com/p749b"><img src="https://autism.crd.co/assets/images/gallery03/45050ba7_original.gif?v=69d6a439" alt="cat kittycat"/></a></div>
+<!-- FLYING -->
 
+<img id="santa" src="https://drive.google.com/uc?export=view&id=1uTIQlgd5wSmhkd_Lm5XtZOs7koIEUNq4"/>
 
-<style>html:after {
-  animation: grain 8s steps(10) infinite;
-  background-image: url(https://64.media.tumblr.com/849c4259435e5ff9789dd42e23fbf003/tumblr_p422nhq6vi1qzm8dwo1_640.gifv);
-  content: "";
-  height: 300;
-  left: -50;
-  opacity:.4;
-  position: fixed;
-  top: -110;
-  width: 300;
-  pointer-events:none;
-}
-@keyframes grain 
-  70% { transform:translate(0, 15) }
+<!-- ABOUT -->
 
-    <div class="bio">
+<div class="bio-box">
 
 <h1>ROB</h1>
 
 <p>
-indie game developer<br>
-survival horror • mystery • exploration<br>
+indie game developer
+<br><br>
+survival horror • mystery
+<br>
+exploration • co-op
+<br>
 godot engine
 </p>
 
 </div>
-}</style>
+
+<!-- LINKS -->
+
+<div class="links-box">
+
+<h2>LINKS</h2>
+
+<a class="pixel-btn" href="#">STEAM</a>
+
+<a class="pixel-btn" href="#">ITCH.IO</a>
+
+<a class="pixel-btn" href="#">GITHUB</a>
+
+<a class="pixel-btn" href="#">YOUTUBE</a>
+
+<a class="pixel-btn" href="#">DISCORD</a>
+
+</div>
+
+<!-- PROJECT -->
+
+<div class="project-box">
+
+<h2>CURRENT PROJECT</h2>
+
+<p>
+DIGALO CON GOLPES
+<br><br>
+party game
+<br>
+made with Godot 4.5
+</p>
+
+</div>
+
+<!-- MUSIC -->
+
+<div class="music-box">
+
+<h2>NOW PLAYING</h2>
+
+<p>
+♪ Silent Hill 2 OST
+<br>
+♪ Akina Nakamori
+<br>
+♪ Hikaru Utada
+</p>
+
+</div>
+
+<!-- FAVORITES -->
+
+<div class="favorites-box">
+
+<h2>FAVORITES</h2>
+
+<p>
+🎮 Resident Evil
+<br>
+🎮 Silent Hill
+<br>
+🎮 Fatal Frame
+<br>
+🎮 Yume Nikki
+</p>
+
+<p>
+🎬 Perfect Blue
+<br>
+🎬 Pulse (2001)
+<br>
+🎬 Cure
+</p>
+
+<p>
+🐱 Toro Inoue
+<br>
+🕶 Ada Wong
+<br>
+🐈 Catwoman
+</p>
+
+</div>
+
+<div class="bio-box">
+
+<h2>STATUS</h2>
+
+<p>
+currently making games,
+drinking coffee
+and surviving.
+</p>
+
+</div>
