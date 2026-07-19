@@ -1,294 +1,215 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROB // LINKS</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
-
-:root{
-  --wine: #7a0c1e;
-  --blood: #b0142b;
-  --violet: #2a0f2e;
-  --ink: #0a0708;
-  --bone: #e8e2d8;
-  --borders: double var(--blood) 4px;
+p{
+    color: white;
+    text-align: center;
+    font-family: 'pt mono';
 }
-
-*{ box-sizing: border-box; }
-
-html, body{
-  margin: 0;
-  min-height: 100%;
+h1,h2,h3,h4,h5 {
+    color: white;
+    text-align: center;
+    font-family: 'press start 2p';
+    font-size: 10px;
 }
-
-body{
-  background:
-    radial-gradient(ellipse at top, rgba(122,12,30,0.18), transparent 60%),
-    radial-gradient(ellipse at bottom, rgba(42,15,46,0.35), transparent 60%),
-    var(--ink);
-  color: var(--bone);
-  font-family: 'PT Mono', monospace;
-  cursor: crosshair;
-  position: relative;
-  overflow-x: hidden;
+body {
+    background: url(https://i.pinimg.com/originals/b6/cd/09/b6cd095b544fceabb377fa28a9b4eb53.jpg);
 }
-
-p{ color: var(--bone); text-align: center; font-family: 'PT Mono', monospace; }
-h1,h2,h3,h4{
-  color: var(--bone);
-  text-align: center;
-  font-family: 'Press Start 2P', monospace;
-  text-shadow: 2px 2px 0 var(--wine);
+main {
+    background: none;
 }
-
-/* film-grain overlay, generated so it doesn't depend on an external gif */
-body::after{
-  content:"";
-  position: fixed;
-  inset: -20%;
-  width: 140%;
-  height: 140%;
-  pointer-events: none;
-  z-index: 5;
-  opacity: 0.18;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain 8s steps(6) infinite;
+.general-about {
+    border: double #FF6BBF 4px;
+    padding: 10px;
+    height: 217px;
+    background: rgba(0, 0, 0, 0.3);
 }
-@keyframes grain{
-  0%{ transform: translate(0,0); }
-  20%{ transform: translate(-3%,2%); }
-  40%{ transform: translate(2%,-3%); }
-  60%{ transform: translate(-2%,-2%); }
-  80%{ transform: translate(3%,1%); }
-  100%{ transform: translate(0,0); }
+.general-about .profile-pic img {
+     border: solid #FF6BBF 3px;
 }
-
-/* vignette */
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  z-index: 4;
-  pointer-events: none;
-  box-shadow: inset 0 0 160px 60px rgba(0,0,0,0.85);
+.contact .inner {
+    border: double #FF6BBF 4px;
+    background: (0,0,0,30%);
 }
-
-/* small floating moth drifting across the page, inline SVG so nothing external can break */
-.moth{
-  position: fixed;
-  top: 14%;
-  left: -60px;
-  width: 34px;
-  height: 34px;
-  z-index: 3;
-  opacity: 0.55;
-  animation: flit 14s linear infinite;
-  pointer-events: none;
+:root {
+    --logo-blue: ;
+    --darker-blue: white;
+    --lighter-blue: ;
+    --even-lighter-blue: ;
+    --lightest-blue: ;
+    --dark-orange: white;
+    --light-orange: ;
+    --even-lighter-orange: ;
+    --green: ;
 }
-@keyframes flit{
-  from{ left: -60px; transform: translateY(0) rotate(0deg); }
-  50%{ transform: translateY(40px) rotate(8deg); }
-  to{ left: calc(100% + 60px); transform: translateY(-10px) rotate(-6deg); }
+.mood {
+    margin-top: 10px;
+    margin-bottom: 3px;
+    border: double #FF6BBF 4px;
+    padding-left: 10px;
+    padding-top: 5px;
+    background: (0,0,0,30%);
 }
-
-main{
-  position: relative;
-  z-index: 2;
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 48px 18px 60px;
+.profile .left .table-section .inner {
+    border: double #FF6BBF 4px;
+    padding-left: 7px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background: (0,0,0,30%);
 }
-
-/* ===== profile box ===== */
-.profile-box{
-  border: var(--borders);
-  background: rgba(10,7,8,0.55);
-  padding: 22px 16px 26px;
-  text-align: center;
-  position: relative;
+.blog-preview {
+    margin-top: 32px;
 }
-.avatar{
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 14px;
-  border: solid var(--blood) 3px;
-  border-radius: 50%;
-  background: var(--violet);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 30px;
-  color: var(--bone);
+.blurbs .inner {
+    border: double #FF6BBF 4px;
+    padding-left: 10px;
+    padding-top: 10px;
+    background: (0,0,0,30%);
 }
-h1.name{
-  font-size: 18px;
-  margin: 8px 0 4px;
-  letter-spacing: 1px;
+.friends .inner {
+    border: double #FF6BBF 4px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    background: (0,0,0,30%);
 }
-.tagline{
-  font-size: 11px;
-  opacity: 0.75;
-  margin: 0;
+table.comments-table{
+    display: block;
+    height: 250px!important;
+    overflow-y: scroll;
 }
-
-/* ===== section label ===== */
-.section-label{
-  font-family: 'Press Start 2P', monospace;
-  font-size: 9px;
-  color: var(--blood);
-  margin: 30px 0 10px 2px;
-  text-align: left;
+.url-info {
+    border: var(--borders)!important;
+    background: (0,0,0,30%);
 }
-
-/* ===== link list, boxed like .contact .inner in the reference ===== */
-.links{
-  border: var(--borders);
-  background: rgba(10,7,8,0.55);
-  padding: 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+:root {
+    --borders: double #FF6BBF 4px;
+    background: (0,0,0,30%);
 }
-.link-row{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 10px;
-  text-decoration: none;
-  color: var(--bone);
-  border: 1px solid rgba(176,20,43,0.35);
-  background: rgba(122,12,30,0.06);
-  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+nav .links {
+    border: var(--borders);
+    text-align: center;
+    font-size: 11px;
+    font-family: 'pt mono';
+    background: (0,0,0,30%);
 }
-.link-row:hover{
-  background: rgba(122,12,30,0.28);
-  border-color: var(--blood);
-  transform: translateX(3px);
+.top {
+    border: var(--borders);
+    margin-bottom: 10px;
+    font-family: 'pt mono';
+    background: (0,0,0,30%);
 }
-.link-row .glyph{
-  font-family: 'Press Start 2P', monospace;
-  font-size: 12px;
-  width: 28px;
-  text-align: center;
-  color: var(--blood);
-  flex: 0 0 auto;
+.profile h1 {
+    text-align: center;
 }
-.link-row .label{
-  flex: 1 1 auto;
-  text-align: left;
+/* contact icons */
+.contact .inner a img {
+font-size: 0;
 }
-.link-row .label .title{
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
+.contact .inner a img:before {
+font-size: 1em;
+display: block
 }
-.link-row .label .sub{
-  display: block;
-  font-size: 10px;
-  opacity: 0.6;
+.contact .inner .f-row:nth-child(1) .f-col:nth-child(1) a:before {
+/* add to friends */
+content: "☆"
 }
-.link-row .mark{ font-size: 14px; color: var(--blood); }
-
-/* ===== footer ===== */
-footer.sign{
-  border: var(--borders);
-  background: rgba(10,7,8,0.55);
-  margin-top: 30px;
-  padding: 14px;
-  text-align: center;
-  font-size: 10px;
-  letter-spacing: 1px;
-  opacity: 0.8;
+.contact .inner .f-row:nth-child(1) .f-col:nth-child(2) a:before {
+/* add to favorite */
+content: "☆"
 }
-.back-home{ text-align:center; margin-top: 26px; }
-.back-home a{
-  font-family: 'Press Start 2P', monospace;
-  font-size: 9px;
-  color: var(--bone);
-  border: var(--borders);
-  background: rgba(122,12,30,0.15);
-  padding: 10px 14px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background 0.15s ease;
+.contact .inner .f-row:nth-child(2) .f-col:nth-child(1) a:before {
+/* send a message */
+content: "★"
 }
-.back-home a:hover{ background: rgba(122,12,30,0.4); }
-
-@media (max-width: 420px){
-  h1.name{ font-size: 15px; }
+.contact .inner .f-row:nth-child(2) .f-col:nth-child(2) a:before {
+/* foward to friend*/
+content: "★"
+}
+.contact .inner .f-row:nth-child(3) .f-col:nth-child(1) a:before {
+/* instant message */
+content: "☆"
+}
+.contact .inner .f-row:nth-child(3) .f-col:nth-child(2) a:before {
+/* block user */
+content: "☆"
+}
+.contact .inner .f-row:nth-child(4) .f-col:nth-child(1) a:before {
+/* add 2 group  */
+content: "★"
+}
+.contact .inner .f-row:nth-child(4) .f-col:nth-child(2) a:before {
+/* report */
+content: "★"
+}
+footer{
+    border: var(--borders);
+    font-size: 15px;
+    background: none;
+}
+.friends .person img {
+    border: solid #FF6BBF;
+}
+.profile .friends .person p {
+    color: white;
+    font-weight: normal;
+}
+.comments-table td img {
+    border: solid #FF6BBF;
+}
+.comments-table td p {
+    font-weight: normal;
+}
+.count {
+    color: #FF6BBF;
+}
+button, input, optgroup, select, textarea {
+    font-family: 'pt mono';
+    font-size: 10px;
+    line-height: 1.15;
+    margin: 0;
+    background: #000000;
+    border: #FF6BBF double 3px;
+    color: white;
 }
 </style>
-</head>
-<body>
+<style>
 
-<svg class="moth" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 6c-3 4-9 3-12 8 3 1 8 2 12 -1 4 3 9 2 12 1 -3 -5 -9 -4 -12 -8z" fill="#e8e2d8" opacity="0.8"/>
-  <circle cx="16" cy="14" r="2" fill="#0a0708"/>
-  <line x1="16" y1="6" x2="16" y2="16" stroke="#0a0708" stroke-width="1"/>
-</svg>
+body { cursor: url(https://i.imgur.com/n1OKJev.png), default; }
 
-<main>
-  <section class="profile-box">
-    <div class="avatar">R</div>
-    <h1 class="name">ROB</h1>
-    <p class="tagline">dev &amp; game designer — juegos, arte, redes</p>
-  </section>
+</style>
 
-  <p class="section-label">// links</p>
-  <nav class="links">
-    <a class="link-row" href="#" target="_blank" rel="noopener">
-      <span class="glyph">D</span>
-      <span class="label">
-        <span class="title">Discord</span>
-        <span class="sub">sumate al server</span>
-      </span>
-      <span class="mark">›</span>
-    </a>
-    <a class="link-row" href="#" target="_blank" rel="noopener">
-      <span class="glyph">IT</span>
-      <span class="label">
-        <span class="title">itch.io</span>
-        <span class="sub">mis juegos</span>
-      </span>
-      <span class="mark">›</span>
-    </a>
-    <a class="link-row" href="#" target="_blank" rel="noopener">
-      <span class="glyph">X</span>
-      <span class="label">
-        <span class="title">Twitter / X</span>
-        <span class="sub">devlogs y updates</span>
-      </span>
-      <span class="mark">›</span>
-    </a>
-    <a class="link-row" href="#" target="_blank" rel="noopener">
-      <span class="glyph">IG</span>
-      <span class="label">
-        <span class="title">Instagram</span>
-        <span class="sub">arte y capturas</span>
-      </span>
-      <span class="mark">›</span>
-    </a>
-    <a class="link-row" href="#" target="_blank" rel="noopener">
-      <span class="glyph">GH</span>
-      <span class="label">
-        <span class="title">GitHub</span>
-        <span class="sub">código y repos</span>
-      </span>
-      <span class="mark">›</span>
-    </a>
-  </nav>
+<div style="float:  ; max-width: 200px; height: auto; position: fixed; left: 37px; top: 9px; z-index: 200;"><a href="https://alturl.com/p749b"><img src="https://autism.crd.co/assets/images/gallery03/45050ba7_original.gif?v=69d6a439" alt="cat kittycat"/></a></div>
 
-  <div class="back-home">
-    <a href="index.html">‹ volver al portfolio</a>
-  </div>
 
-  <footer class="sign">© rob — all rights reserved</footer>
-</main>
+<style>html:after {
+  animation: grain 8s steps(10) infinite;
+  background-image: url(https://64.media.tumblr.com/849c4259435e5ff9789dd42e23fbf003/tumblr_p422nhq6vi1qzm8dwo1_640.gifv);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity:.4;
+  position: fixed;
+  top: -110%;
+  width: 300%;
+  pointer-events:none;
+}
+@keyframes grain 
+  70% { transform:translate(0%, 15%) }
+}</style>
 
-</body>
-</html>
+<style>
+@keyframes flying-santa{
+  from{ left:-400px; }
+  to{ left:calc(100% + 20px); }
+}
+#santa{
+  position: fixed;
+  left: -400px;
+  top: 500px;
+  width: 500px;
+  animation: flying-santa 7s infinite linear;
+  pointer-events: none;
+}
+</style>
+<img id="santa" src="https://drive.google.com/uc?export=view&id=1uTIQlgd5wSmhkd_Lm5XtZOs7koIEUNq4"/>
