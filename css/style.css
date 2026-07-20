@@ -1,1 +1,10 @@
+:root{
+    --pink:#FF6BBF;
+    --boxbg:rgba(0,0,0,.45);
+    --borders:double var(--pink) 4px;
+}
 
+body{
+    background:url("../img/background.jpg");
+    cursor:url("../img/cursor.png"), default;
+}
