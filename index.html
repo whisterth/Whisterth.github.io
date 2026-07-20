@@ -1,302 +1,150 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+<!DOCTYPE html>
+<html lang="en">
 
-:root{
-    --pink:#FF6BBF;
-    --boxbg:rgba(0,0,0,.45);
-    --borders:double var(--pink) 4px;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-    background:url(https://i.pinimg.com/originals/b6/cd/09/b6cd095b544fceabb377fa28a9b4eb53.jpg);
-    cursor:url(https://i.imgur.com/n1OKJev.png), default;
-}
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-main{
-    background:none;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
 
-p{
-    color:white;
-    text-align:center;
-    font-family:'PT Mono', monospace;
-}
+    <link rel="stylesheet" href="css/style.css">
 
-h1,h2,h3,h4,h5{
-    color:white;
-    text-align:center;
-    font-family:'Press Start 2P', cursive;
-    font-size:10px;
-    line-height:1.6;
-}
+    <title>Rob</title>
+</head>
 
-a{
-    color:white;
-    text-decoration:none;
-}
+<body>
 
-.general-about{
-    border:var(--borders);
-    padding:10px;
-    background:var(--boxbg);
-}
+    <!-- GATO -->
 
-.general-about .profile-pic img{
-    border:solid var(--pink) 3px;
-}
+    <div class="cat">
 
-.contact .inner,
-.mood,
-.profile .left .table-section .inner,
-.blurbs .inner,
-.friends .inner,
-.url-info,
-.top,
-footer{
-    border:var(--borders);
-    background:var(--boxbg);
-}
+        <a href="https://alturl.com/p749b">
+            <img src="img/cat.gif">
+        </a>
 
-.profile .left .table-section .inner,
-.blurbs .inner,
-.friends .inner{
-    padding:10px;
-}
+    </div>
 
-nav .links{
-    border:var(--borders);
-    text-align:center;
-    font-size:11px;
-    font-family:'PT Mono';
-    background:var(--boxbg);
-}
+    <!-- FLYING -->
 
-.friends .person img,
-.comments-table td img{
-    border:solid var(--pink);
-}
+    <img id="santa" src="img/flying.gif">
 
-.count{
-    color:var(--pink);
-}
+    <!-- ABOUT -->
 
-button,input,optgroup,select,textarea{
-    font-family:'PT Mono';
-    font-size:10px;
-    background:black;
-    border:double var(--pink) 3px;
-    color:white;
-}
+    <div class="bio-box">
 
-/* LINK IN BIO */
+        <h1>ROB</h1>
 
-.bio-box,
-.links-box,
-.project-box,
-.music-box,
-.favorites-box{
-    border:var(--borders);
-    background:var(--boxbg);
-    padding:12px;
-    margin-top:15px;
-}
+        <p>
+            indie game developer
+            <br><br>
+            survival horror • mystery
+            <br>
+            exploration • co-op
+            <br>
+            godot engine
+        </p>
 
-.pixel-btn{
-    display:block;
-    width:85%;
-    margin:8px auto;
-    padding:8px;
-    border:double var(--pink) 3px;
-    background:black;
-    text-align:center;
-    transition:.2s;
-}
+    </div>
 
-.pixel-btn:hover{
-    background:var(--pink);
-    color:black;
-}
+    <!-- LINKS -->
 
-/* CONTACT ICONS */
+    <h2>LINKS</h2>
 
-.contact .inner a img{
-    font-size:0;
-}
+    <a href="https://steamcommunity.com/id/tuusuario">
+        <img src="img/steam.gif">
+        <p>Steam</p>
+    </a>
 
-.contact .inner a:before{
-    font-size:18px;
-}
+    <a href="https://github.com/tuusuario">
+        <img src="img/github.gif">
+        <p>Github</p>
+    </a>
 
-.contact .inner .f-row:nth-child(1) .f-col:nth-child(1) a:before{content:"☆";}
-.contact .inner .f-row:nth-child(1) .f-col:nth-child(2) a:before{content:"☆";}
-.contact .inner .f-row:nth-child(2) .f-col:nth-child(1) a:before{content:"★";}
-.contact .inner .f-row:nth-child(2) .f-col:nth-child(2) a:before{content:"★";}
-.contact .inner .f-row:nth-child(3) .f-col:nth-child(1) a:before{content:"☆";}
-.contact .inner .f-row:nth-child(3) .f-col:nth-child(2) a:before{content:"☆";}
-.contact .inner .f-row:nth-child(4) .f-col:nth-child(1) a:before{content:"★";}
-.contact .inner .f-row:nth-child(4) .f-col:nth-child(2) a:before{content:"★";}
+    <!-- PROJECT -->
 
-/* CRT EFFECT */
+    <div class="project-box">
 
-html:after{
-    animation:grain 8s steps(10) infinite;
-    background-image:url(https://64.media.tumblr.com/849c4259435e5ff9789dd42e23fbf003/tumblr_p422nhq6vi1qzm8dwo1_640.gifv);
-    content:"";
-    height:300%;
-    left:-50%;
-    opacity:.4;
-    position:fixed;
-    top:-110%;
-    width:300%;
-    pointer-events:none;
-}
+        <h2>CURRENT PROJECT</h2>
 
-@keyframes grain{
-    70%{
-        transform:translate(0%,15%);
-    }
-}
+        <p>
+            DIGALO CON GOLPES
+            <br><br>
+            party game
+            <br>
+            made with Godot 4.5
+        </p>
 
-/* FLYING THING */
+    </div>
 
-@keyframes flying-santa{
-    from{
-        left:-400px;
-    }
-    to{
-        left:calc(100% + 20px);
-    }
-}
+    <!-- MUSIC -->
 
-#santa{
-    position:fixed;
-    left:-400px;
-    top:500px;
-    width:350px;
-    animation:flying-santa 8s infinite linear;
-    pointer-events:none;
-}
-</style>
+    <div class="music-box">
 
-<!-- GATO -->
+        <h2>NOW PLAYING</h2>
 
-<div style="position:fixed;left:37px;top:9px;z-index:200;">
-<a href="https://alturl.com/p749b">
-<img src="https://autism.crd.co/assets/images/gallery03/45050ba7_original.gif?v=69d6a439">
-</a>
-</div>
+        <p>
+            ♪ Silent Hill 2 OST
+            <br>
+            ♪ Akina Nakamori
+            <br>
+            ♪ Hikaru Utada
+        </p>
 
-<!-- FLYING -->
+    </div>
 
-<img id="santa" src="https://drive.google.com/uc?export=view&id=1uTIQlgd5wSmhkd_Lm5XtZOs7koIEUNq4"/>
+    <!-- FAVORITES -->
 
-<!-- ABOUT -->
+    <div class="favorites-box">
 
-<div class="bio-box">
+        <h2>FAVORITES</h2>
 
-<h1>ROB</h1>
+        <p>
+            🎮 Resident Evil
+            <br>
+            🎮 Silent Hill
+            <br>
+            🎮 Fatal Frame
+            <br>
+            🎮 Yume Nikki
+        </p>
 
-<p>
-indie game developer
-<br><br>
-survival horror • mystery
-<br>
-exploration • co-op
-<br>
-godot engine
-</p>
+        <p>
+            🎬 Perfect Blue
+            <br>
+            🎬 Pulse
+            <br>
+            🎬 Cure
+        </p>
 
-</div>
+        <p>
+            🐱 Toro Inoue
+            <br>
+            🕶 Ada Wong
+            <br>
+            🐈 Catwoman
+        </p>
 
-<!-- LINKS -->
+    </div>
 
-<h2>LINKS</h2>
+    <div class="bio-box">
 
-<a href="https://steamcommunity.com/id/tuusuario">
-<img src="https://i.imgur.com/XXXXX.gif">
-<p>Steam</p>
-</a>
+        <h2>STATUS</h2>
 
-<a href="https://steamcommunity.com/id/tuusuario">
-<img src="https://i.imgur.com/XXXXX.gif">
-<p>Steam</p>
-</a>
+        <p>
+            currently making games,
+            drinking coffee
+            and surviving.
+        </p>
 
-<!-- PROJECT -->
+    </div>
 
-<div class="project-box">
+    <script src="js/main.js"></script>
 
-<h2>CURRENT PROJECT</h2>
+</body>
 
-<p>
-DIGALO CON GOLPES
-<br><br>
-party game
-<br>
-made with Godot 4.5
-</p>
-
-</div>
-
-<!-- MUSIC -->
-
-<div class="music-box">
-
-<h2>NOW PLAYING</h2>
-
-<p>
-♪ Silent Hill 2 OST
-<br>
-♪ Akina Nakamori
-<br>
-♪ Hikaru Utada
-</p>
-
-</div>
-
-<!-- FAVORITES -->
-
-<div class="favorites-box">
-
-<h2>FAVORITES</h2>
-
-<p>
-🎮 Resident Evil
-<br>
-🎮 Silent Hill
-<br>
-🎮 Fatal Frame
-<br>
-🎮 Yume Nikki
-</p>
-
-<p>
-🎬 Perfect Blue
-<br>
-🎬 Pulse (2001)
-<br>
-🎬 Cure
-</p>
-
-<p>
-🐱 Toro Inoue
-<br>
-🕶 Ada Wong
-<br>
-🐈 Catwoman
-</p>
-
-</div>
-
-<div class="bio-box">
-
-<h2>STATUS</h2>
-
-<p>
-currently making games,
-drinking coffee
-and surviving.
-</p>
-
-</div>
+</html>
